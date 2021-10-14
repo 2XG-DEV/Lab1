@@ -1,0 +1,2 @@
+module labor1 {
+}
