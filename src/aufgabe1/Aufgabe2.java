@@ -2,7 +2,13 @@ package aufgabe1;
 
 public class Aufgabe2 {
 	
-	public static int max(int[] zahlen) {
+	
+	/**
+	 * findet die grosste zahl in ein array
+	 * @param zahlen
+	 * @return int mit die grosste zahl
+	 */
+	public static int getMax(int[] zahlen) {
 		int max = 0;
 		for(int i = 0 ; i < zahlen.length;i++) {
 			if(zahlen[i]>max) {
@@ -11,8 +17,12 @@ public class Aufgabe2 {
 		}
 		return max;
 	}
-	
-	public static int min(int[] zahlen) {
+	/**
+	 * findet die kleinste zahl in die Array
+	 * @param zahlen
+	 * @return int mit die kleinste zahl
+	 */
+	public static int getMin(int[] zahlen) {
 		int min = zahlen[0];
 		for(int i = 1 ; i < zahlen.length;i++) {
 			if(zahlen[i]<min) {
@@ -21,21 +31,29 @@ public class Aufgabe2 {
 		}
 		return min;
 	}
-	
-	public static int maxSumN(int[] zahlen) {
+	/**
+	 * findet die grosste sume von n-1 zahlen in ein array bei die Entfernung der kleinste zahl
+	 * @param zahlen
+	 * @return int mit die grosste summe der n-1 zahlen
+	 */
+	public static int getMaxSumN(int[] zahlen) {
 		int sum = 0;
 		for(int i = 0 ; i < zahlen.length;i++) {
 			sum += zahlen[i];
 		}
-		return sum - min(zahlen);
+		return sum - getMin(zahlen);
 	}
-	
-	public static int minSumN(int[] zahlen) {
+	/**
+	 * findet die kleinste summe von n-1 zahlen in ein array bei die entfernung der grosste zahl
+	 * @param zahlen
+	 * @return int mit die kleinste summe der n-1 zahlen
+	 */
+	public static int getMinSumN(int[] zahlen) {
 		int sum = 0;
 		for(int i = 0 ; i < zahlen.length;i++) {
 			sum += zahlen[i];
 		}
-		return sum - max(zahlen);
+		return sum - getMax(zahlen);
 	}
 
 }
